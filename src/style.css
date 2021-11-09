@@ -1,0 +1,50 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-gap: 4rem;
+  padding: 5rem;
+  min-height: calc(100vh - 5rem);
+}
+
+.col--leaderboard {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.col--leaderboard__container {
+  width: 50%;
+}
+
+.col--leaderboard .recent-scores {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.col--leaderboard__list {
+  padding-left: 0.75rem;
+  list-style: none;
+  border: 1px solid black;
+  width: 100%;
+  max-width: 450px;
+}
+
+.col--add-score__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: flex-start;
+  width: 200px;
+}
+
+.col--add-score__form .btn-submit {
+  width: max-content;
+  align-self: flex-end;
+}
