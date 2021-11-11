@@ -45,6 +45,11 @@
       justify-content: flex-start;
       width: 200px;
 
+      .error {
+        color: #df4759;
+        display: none;
+      }
+
       .btn-submit {
         width: max-content;
         align-self: flex-end;

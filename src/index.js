@@ -1,29 +1,29 @@
 import _ from 'lodash';
 import './style.css';
+import { getLeaderBoard } from './leaderboardApi.js';
+// eslint-disable-next-line import/no-cycle
+import btnsAction from './btnsAction.js';
 
-function renderLeaderBoard() {
-  const leaderBoardItems = [
-    {
-      name: 'Nicu',
-      score: 100,
-    },
-    {
-      name: 'Amr',
-      score: 45,
-    },
-    {
-      name: 'Abel',
-      score: 123,
-    },
-  ];
+const renderLeaderBoard = (leaderBoardApiContent) => {
+  const leaderBoardItems = leaderBoardApiContent;
   const listItemClassName = 'col--leaderboard__list--item';
   const leaderBoardList = _.map(leaderBoardItems, (item) => {
-    const { name, score } = item;
-    return `<li class="${listItemClassName}">${name}: ${score}</li>`;
+    const { user, score } = item;
+    return `<li class="${listItemClassName}">${user}: ${score}</li>`;
   });
   const docLeaderBoardList = document.getElementById('leaderboard');
 
   docLeaderBoardList.innerHTML = leaderBoardList.join('');
-}
+};
 
-renderLeaderBoard();
+const getLeaderBoardContent = () => {
+  getLeaderBoard().then((res) => {
+    res.result = _.orderBy(res.result, ['score', 'user'], ['desc', 'asc']);
+    renderLeaderBoard(res.result);
+  });
+};
+
+getLeaderBoardContent();
+btnsAction();
+
+export default getLeaderBoardContent;

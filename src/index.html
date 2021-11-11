@@ -12,7 +12,7 @@
                     <h1>Leaderboard</h1>
                     <div class="recent-scores">
                         <h2>Recent scores</h2>
-                        <button type="button">refresh</button>
+                        <button type="button" id="btn-refresh">refresh</button>
                     </div>
                     <ul class="col--leaderboard__list" id="leaderboard">
                     </ul>
@@ -20,11 +20,12 @@
             </section>
             <section class=".col col--add-score">
                 <h2>Add your score</h2>
-                <form class="col--add-score__form">
+                <form class="col--add-score__form" id="form">
                     <label for="name" hidden>Enter your name</label>
-                    <input type="text" name="name" id="name" placeholder="Your name">
+                    <small class="error" id="error"></small>
+                    <input type="text" name="name" id="name" placeholder="Username">
                     <label for="score" hidden>Enter your score</label>
-                    <input type="number" name="number" id="score" placeholder="Your score" min="0">
+                    <input type="number" name="number" id="score" placeholder="Score" min="1">
                     <button type="submit" class="btn-submit">Submit</button>
                 </form>
             </section>
