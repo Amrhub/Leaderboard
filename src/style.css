@@ -44,7 +44,13 @@
   width: 200px;
 }
 
+.col--add-score__form .error {
+  color: #df4759;
+  display: none;
+}
+
 .col--add-score__form .btn-submit {
   width: max-content;
   align-self: flex-end;
 }
+/*# sourceMappingURL=style.css.map */

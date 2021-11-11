@@ -2,10 +2,10 @@
 
 # LeaderBoard
 
-> LeaderBoard setup
+> LeaderBoard functionality
 
 ![screenshot](./app_screenshot.png)
-In this project I set up structure for leaderboard
+In this project I add functionality to buttons and hit the API to get the leaderboard.
 
 ## Built With
 
