@@ -52,6 +52,8 @@ To interact with this this api here's the url `https://us-central1-js-capstone-b
 endpoint  **/games/:id/scores/** <br>
 possible methods `GET POST`
 
+<br> In our example `gameId = 'KvmpNbDRknvr72mDOdNz'`
+
 #### Add new player 
 You would use `{method: "POST"}` and send body in `JSON` format, e.g `{body: {user: name, score: num}}`
 
