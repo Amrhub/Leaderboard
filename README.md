@@ -2,10 +2,10 @@
 
 # LeaderBoard
 
-> LeaderBoard functionality
+> LeaderBoard
 
 ![screenshot](./app_screenshot.png)
-In this project I add functionality to buttons and hit the API to get the leaderboard.
+This project allows you to add to a leaderboard for your chess world cup 2021.
 
 ## Built With
 

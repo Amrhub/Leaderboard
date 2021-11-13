@@ -2,6 +2,15 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  color: #012138;
+}
+
+body {
+  background-image: url("images/chess-7.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 110%;
+  height: 100%;
+  min-height: 90vh;
 }
 
 .container {
@@ -10,6 +19,31 @@
   grid-gap: 4rem;
   padding: 5rem;
   min-height: calc(100vh - 5rem);
+}
+
+.btn {
+  background-color: #f9f9f9;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  color: #012138;
+  font-weight: bold;
+  text-transform: capitalize;
+  cursor: pointer;
+  padding: 0.5rem;
+  text-align: center;
+  appearance: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #012385;
+  color: #f9f9f9;
+}
+
+.btn:focus-visible,
+.btn:active {
+  outline: none;
+  box-shadow: 0 0 0 5px #f9f9f9, 0 0 0 10px #012385;
 }
 
 .col--leaderboard {
@@ -28,12 +62,40 @@
   gap: 0.75rem;
 }
 
+.col--leaderboard .loader {
+  font-size: 40px;
+}
+
 .col--leaderboard__list {
   padding-left: 0.75rem;
   list-style: none;
-  border: 1px solid black;
+  border-radius: 5px;
+  overflow-y: scroll;
+  border: 1px solid #012138;
   width: 100%;
-  max-width: 450px;
+  max-width: 300px;
+  display: none;
+  background-image: linear-gradient(to right, #f9f9f9, #012385);
+  max-height: 200px;
+}
+
+.col--leaderboard__list::-webkit-scrollbar {
+  width: 0.7rem;
+  background: #0b2a8a;
+}
+
+.col--leaderboard__list::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to bottom, #f9f9f9, transparent);
+  border-radius: 4px;
+}
+
+.col--leaderboard__list--item {
+  background-image: -webkit-linear-gradient(0deg, #012385 50%, #f9f9f9 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  height: 100%;
+  max-height: 80px;
+  padding: 0.25rem 0;
 }
 
 .col--add-score__form {
@@ -47,6 +109,19 @@
 .col--add-score__form .error {
   color: #df4759;
   display: none;
+}
+
+.col--add-score__form input {
+  border-radius: 5px;
+  border: 0.5px solid #012138;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.col--add-score__form input:focus-visible,
+.col--add-score__form input:active {
+  outline: none;
+  box-shadow: 0 0 0 5px #f9f9f9, 0 0 0 10px #012385;
 }
 
 .col--add-score__form .btn-submit {
