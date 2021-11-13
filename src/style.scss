@@ -84,11 +84,12 @@ body {
       width: 100%;
       max-width: 300px;
       display: none;
-      background-image: linear-gradient(
-        to right,
-        $secondary-color,
-        $light-blue
-      );
+      background-image:
+        linear-gradient(
+          to right,
+          $secondary-color,
+          $light-blue
+        );
       max-height: 200px;
 
       &::-webkit-scrollbar {
@@ -97,20 +98,22 @@ body {
       }
 
       &::-webkit-scrollbar-thumb {
-        background-image: linear-gradient(
-          to bottom,
-          $secondary-color,
-          transparent
-        );
+        background-image:
+          linear-gradient(
+            to bottom,
+            $secondary-color,
+            transparent
+          );
         border-radius: 4px;
       }
 
       &--item {
-        background-image: -webkit-linear-gradient(
-          0deg,
-          $light-blue 50%,
-          $secondary-color 50%
-        );
+        background-image:
+          -webkit-linear-gradient(
+            0deg,
+            $light-blue 50%,
+            $secondary-color 50%
+          );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         height: 100%;
