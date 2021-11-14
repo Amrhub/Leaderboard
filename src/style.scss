@@ -1,7 +1,30 @@
+$primary-color: #012138;
+$light-blue: #012385;
+$secondary-color: #f9f9f9;
+
+@mixin focus-active-shadow-box() {
+  transition: all 0.3s ease-in-out;
+
+  &:focus-visible,
+  &:active {
+    outline: none;
+    box-shadow: 0 0 0 5px $secondary-color, 0 0 0 10px $light-blue;
+  }
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  color: $primary-color;
+}
+
+body {
+  background-image: url('images/chess-7.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 110%;
+  height: 100%;
+  min-height: 90vh;
 }
 
 .container {
@@ -10,6 +33,26 @@
   grid-gap: 4rem;
   padding: 5rem;
   min-height: calc(100vh - 5rem);
+}
+
+.btn {
+  background-color: $secondary-color;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  color: $primary-color;
+  font-weight: bold;
+  text-transform: capitalize;
+  cursor: pointer;
+  padding: 0.5rem;
+  text-align: center;
+  appearance: none;
+
+  &:hover {
+    background-color: $light-blue;
+    color: $secondary-color;
+  }
+
+  @include focus-active-shadow-box();
 }
 
 .col {
@@ -28,12 +71,55 @@
       gap: 0.75rem;
     }
 
+    .loader {
+      font-size: 40px;
+    }
+
     &__list {
       padding-left: 0.75rem;
       list-style: none;
-      border: 1px solid black;
+      border-radius: 5px;
+      overflow-y: scroll;
+      border: 1px solid $primary-color;
       width: 100%;
-      max-width: 450px;
+      max-width: 300px;
+      display: none;
+      background-image:
+        linear-gradient(
+          to right,
+          $secondary-color,
+          $light-blue
+        );
+      max-height: 200px;
+
+      &::-webkit-scrollbar {
+        width: 0.7rem;
+        background: #0b2a8a;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-image:
+          linear-gradient(
+            to bottom,
+            $secondary-color,
+            transparent
+          );
+        border-radius: 4px;
+      }
+
+      &--item {
+        background-image:
+          -webkit-linear-gradient(
+            0deg,
+            $light-blue 50%,
+            $secondary-color 50%
+          );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        height: 100%;
+        max-height: 80px;
+        padding: 0.25rem 0;
+      }
     }
   }
 
@@ -48,6 +134,14 @@
       .error {
         color: #df4759;
         display: none;
+      }
+
+      input {
+        border-radius: 5px;
+        border: 0.5px solid $primary-color;
+        padding: 0.5rem 1rem;
+
+        @include focus-active-shadow-box();
       }
 
       .btn-submit {

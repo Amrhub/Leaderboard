@@ -3,17 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Leader board</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+        <title>Leader board - Chess world cup 2021</title>
     <script defer src="main.js"></script></head>
     <body>
         <main class="container">
             <section class=".col col--leaderboard">
                 <div class="col--leaderboard__container">
-                    <h1>Leaderboard</h1>
+                    <h1>Leaderboard - Chess ratings 2021</h1>
                     <div class="recent-scores">
                         <h2>Recent scores</h2>
-                        <button type="button" id="btn-refresh">refresh</button>
+                        <button type="button" id="btn-refresh" class="btn">refresh</button>
                     </div>
+                    <i class="fas fa-spinner fa-pulse loader" id="loader"></i>
                     <ul class="col--leaderboard__list" id="leaderboard">
                     </ul>
                 </div>
@@ -26,7 +28,7 @@
                     <input type="text" name="name" id="name" placeholder="Username">
                     <label for="score" hidden>Enter your score</label>
                     <input type="number" name="number" id="score" placeholder="Score" min="1">
-                    <button type="submit" class="btn-submit">Submit</button>
+                    <button type="submit" class="btn btn-submit">Submit</button>
                 </form>
             </section>
         </main>
